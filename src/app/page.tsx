@@ -30,7 +30,7 @@ export default function Home() {
         </aside>
         <div className="container mx-auto max-w-3xl">
           <SocialShare
-            url="https://www.example.com"
+            url="https://blog-toc.vercel.app/"
             title="Top Frontend Best Practices in 2025"
           />
           <div>
