@@ -3,19 +3,220 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-primary-gradient: linear-gradient(
+    136.33deg,
+    #2444eb 10.05%,
+    #1a276a 98.59%
+  );
+  --base-font-size: 16px;
+  --type-scale: 1.125;
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 0 0% 100%;
+    --foreground: 0, 0%, 22%;
+    --card: 0 0% 100%;
+    --card-foreground: 0, 0%, 22%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0, 0%, 22%;
+    --primary: 230 83.3% 53.1%;
+    --primary-dark: 0 0% 22%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 39.6%;
+    --secondary-foreground: 230, 83%, 53%;
+    --muted: 0 0% 52.2%;
+    --muted-foreground: 0 0% 78.8%;
+    --accent: 217, 100%, 91%;
+    --accent-foreground: 230, 83%, 53%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 0, 0%, 22%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0, 0%, 22%;
+    --foreground: 0 0% 98%;
+    --card: 0, 0%, 22%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0, 0%, 22%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 230, 83%, 53%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+
+    /* Heading styles using type scale */
+    h1 {
+      @apply text-[calc(var(--base-font-size)*pow(var(--type-scale),6))] font-bold;
+    }
+    h2 {
+      @apply text-[calc(var(--base-font-size)*pow(var(--type-scale),5))] font-bold;
+    }
+    h3 {
+      @apply text-[calc(var(--base-font-size)*pow(var(--type-scale),4))] font-bold;
+    }
+    h4 {
+      @apply text-[calc(var(--base-font-size)*pow(var(--type-scale),3))] font-bold;
+    }
+    h5 {
+      @apply text-[calc(var(--base-font-size)*pow(var(--type-scale),2))] font-bold;
+    }
+    h6 {
+      @apply text-[calc(var(--base-font-size)*pow(var(--type-scale),1))] font-bold;
+    }
+    p {
+      @apply text-[calc(var(--base-font-size)*pow(var(--type-scale),0))];
+    }
+
+    a {
+      @apply hover:text-primary;
+    }
+
+    .h1 {
+      @apply text-[40px] font-bold;
+    }
+    .h2 {
+      @apply text-[calc(var(--base-font-size)*pow(var(--type-scale),5))] font-bold;
+    }
+    .h3 {
+      @apply text-[calc(var(--base-font-size)*pow(var(--type-scale),4))] font-bold;
+    }
+    .h4 {
+      @apply text-[calc(var(--base-font-size)*pow(var(--type-scale),3))] font-bold;
+    }
+    .h5 {
+      @apply text-[calc(var(--base-font-size)*pow(var(--type-scale),2))] font-bold;
+    }
+    .h6 {
+      @apply text-[calc(var(--base-font-size)*pow(var(--type-scale),1))] font-bold;
+    }
+  }
+}
+
+/* Large screens */
+@screen xl {
+  :root {
+    --type-scale: 1.25;
+  }
+}
+
+@screen lg {
+  body {
+    .h1 {
+      @apply text-[calc(var(--base-font-size)*pow(var(--type-scale),6))] font-bold;
+    }
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1400px) {
+  .layoutThree {
+    width: 1240px !important;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1500px) {
+  .layoutThree {
+    width: 1300px !important;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 2000px) {
+  .layoutThree {
+    width: 1500px !important;
+  }
+}
+
+.flag-dropdown {
+  background-color: transparent;
+}
+
+.react-tel-input input[type='tel'] {
+  color: white;
+  background-color: #fff6;
+  display: flex;
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+}
+
+.react-tel-input input[type='tel']::placeholder {
+  color: white;
+}
+
+.react-tel-input .flag-dropdown ul {
+  color: hsl(var(--foreground));
+}
+
+.react-tel-input .selected-flag .arrow {
+  border-top: 4px solid white !important;
+}
+
+.react-tel-input .selected-flag .arrow.up {
+  border-bottom: 4px solid white !important;
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@media (max-width: 640px) {
+  .scrollbar-custom::-webkit-scrollbar {
+    display: none;
+  }
 }
