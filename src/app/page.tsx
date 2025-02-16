@@ -1,10 +1,4 @@
-import { content } from '@/lib/constants';
-import { generateToc } from '@/lib/utils';
-import Image from 'next/image';
-import BlogPost from './blog-post';
-import RenderToc from './render-toc';
-import { UserCircle } from 'lucide-react';
-import SocialShare from './social-share';
+import MotionWrapper from '@/components/motion-wrapper';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -12,57 +6,190 @@ export const metadata: Metadata = {
   description:
     'Learn the top 10 frontend best practices for changing the sector and tactics companies could apply to stay ahead.',
   keywords: 'frontend, best practices, b2b, ecommerce, digital marketing',
+  metadataBase: new URL('https://blog-toc.vercel.app/'),
   openGraph: {
     images: ['/blog.webp'],
   },
 };
 
-export default function Home() {
-  const tocItems = generateToc(content);
-
+export default function BlogDetail() {
   return (
-    <div className="px-4 md:px-8 lg:px-12 flex">
-      <div className="container mx-auto flex">
-        <aside className="hidden xl:block w-64 relative">
-          <div className="sticky top-20">
-            <RenderToc tocItems={tocItems} />
-          </div>
-        </aside>
-        <div className="container mx-auto max-w-3xl">
-          <SocialShare
-            url="https://blog-toc.vercel.app/"
-            title="Top Frontend Best Practices in 2025"
-          />
-          <div>
-            <h1>Top Frontend Best Practices in 2025</h1>
-            <Image
-              src={'https://placehold.co/1000x600'}
-              alt={'top 10'}
-              width={0}
-              height={0}
-              sizes="100vw"
-              className="mt-4 h-auto w-full rounded-lg"
-            />
-            <div className="mt-10 flex items-start gap-4">
-              <div className="flex gap-4">
-                <UserCircle size={40} />
-                <div className="flex gap-3">
-                  <div className="flex flex-col gap-1">
-                    <p className="font-bold sm:text-2xl">John Doe</p>
-                    <p>15 Feb 2025</p>
-                  </div>
-                  <div className="mt-1">
-                    <span className="rounded-full bg-accent/40 px-5 py-2 font-semibold">
-                      e-commerce
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <BlogPost blogContent={content} />
-        </div>
-      </div>
+    <div className="relative px-4 md:px-8 lg:px-12">
+      <h1>Home page</h1>
+      <MotionWrapper>
+        <h2>Testing</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam
+          earum tenetur, corporis fugit nihil suscipit tempora numquam,
+          doloribus natus odio magnam sequi optio. Cum explicabo, architecto
+          tenetur minus doloribus corporis, quas quos dolor perspiciatis animi
+          molestias? Laborum iure enim voluptates molestias, suscipit, id rerum
+          dolore sint saepe incidunt beatae sapiente non iste eos minima cum
+          maiores possimus ipsum cupiditate neque? Eos velit dolore explicabo.
+          Dolorem deserunt architecto excepturi porro voluptates, consequuntur a
+          quisquam nostrum ad consectetur saepe maxime autem at blanditiis
+          dolore reiciendis placeat aperiam dolores maiores dolor eius ea
+          dignissimos! Fugiat eligendi, ex ipsa quaerat adipisci laborum
+          veritatis rerum omnis. Qui, ut possimus, magnam fugit voluptatibus in
+          quod, voluptate reiciendis cum repudiandae excepturi facilis.
+          Temporibus explicabo ut voluptatum vitae nisi modi architecto delectus
+          in. Deserunt, magni! Repellendus distinctio consequuntur recusandae
+          voluptates ut aperiam praesentium qui beatae voluptatibus ipsam sit
+          ducimus doloribus, aut molestiae nemo in pariatur saepe voluptas animi
+          nam non odio? Nesciunt exercitationem minima distinctio autem.
+          Perspiciatis eos commodi debitis nemo recusandae explicabo numquam
+          mollitia quidem ipsam dolorem, consectetur voluptates laboriosam
+          consequuntur, voluptas reiciendis? Quas magnam pariatur illo dicta
+          adipisci expedita praesentium modi. Labore odit enim repudiandae
+          officiis explicabo quasi blanditiis modi, quas inventore quia
+          voluptas. Quo, sint!
+        </p>
+      </MotionWrapper>
+      <MotionWrapper>
+        <h2>Testing</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam
+          earum tenetur, corporis fugit nihil suscipit tempora numquam,
+          doloribus natus odio magnam sequi optio. Cum explicabo, architecto
+          tenetur minus doloribus corporis, quas quos dolor perspiciatis animi
+          molestias? Laborum iure enim voluptates molestias, suscipit, id rerum
+          dolore sint saepe incidunt beatae sapiente non iste eos minima cum
+          maiores possimus ipsum cupiditate neque? Eos velit dolore explicabo.
+          Dolorem deserunt architecto excepturi porro voluptates, consequuntur a
+          quisquam nostrum ad consectetur saepe maxime autem at blanditiis
+          dolore reiciendis placeat aperiam dolores maiores dolor eius ea
+          dignissimos! Fugiat eligendi, ex ipsa quaerat adipisci laborum
+          veritatis rerum omnis. Qui, ut possimus, magnam fugit voluptatibus in
+          quod, voluptate reiciendis cum repudiandae excepturi facilis.
+          Temporibus explicabo ut voluptatum vitae nisi modi architecto delectus
+          in. Deserunt, magni! Repellendus distinctio consequuntur recusandae
+          voluptates ut aperiam praesentium qui beatae voluptatibus ipsam sit
+          ducimus doloribus, aut molestiae nemo in pariatur saepe voluptas animi
+          nam non odio? Nesciunt exercitationem minima distinctio autem.
+          Perspiciatis eos commodi debitis nemo recusandae explicabo numquam
+          mollitia quidem ipsam dolorem, consectetur voluptates laboriosam
+          consequuntur, voluptas reiciendis? Quas magnam pariatur illo dicta
+          adipisci expedita praesentium modi. Labore odit enim repudiandae
+          officiis explicabo quasi blanditiis modi, quas inventore quia
+          voluptas. Quo, sint!
+        </p>
+      </MotionWrapper>
+      <MotionWrapper>
+        <h2>Testing</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam
+          earum tenetur, corporis fugit nihil suscipit tempora numquam,
+          doloribus natus odio magnam sequi optio. Cum explicabo, architecto
+          tenetur minus doloribus corporis, quas quos dolor perspiciatis animi
+          molestias? Laborum iure enim voluptates molestias, suscipit, id rerum
+          dolore sint saepe incidunt beatae sapiente non iste eos minima cum
+          maiores possimus ipsum cupiditate neque? Eos velit dolore explicabo.
+          Dolorem deserunt architecto excepturi porro voluptates, consequuntur a
+          quisquam nostrum ad consectetur saepe maxime autem at blanditiis
+          dolore reiciendis placeat aperiam dolores maiores dolor eius ea
+          dignissimos! Fugiat eligendi, ex ipsa quaerat adipisci laborum
+          veritatis rerum omnis. Qui, ut possimus, magnam fugit voluptatibus in
+          quod, voluptate reiciendis cum repudiandae excepturi facilis.
+          Temporibus explicabo ut voluptatum vitae nisi modi architecto delectus
+          in. Deserunt, magni! Repellendus distinctio consequuntur recusandae
+          voluptates ut aperiam praesentium qui beatae voluptatibus ipsam sit
+          ducimus doloribus, aut molestiae nemo in pariatur saepe voluptas animi
+          nam non odio? Nesciunt exercitationem minima distinctio autem.
+          Perspiciatis eos commodi debitis nemo recusandae explicabo numquam
+          mollitia quidem ipsam dolorem, consectetur voluptates laboriosam
+          consequuntur, voluptas reiciendis? Quas magnam pariatur illo dicta
+          adipisci expedita praesentium modi. Labore odit enim repudiandae
+          officiis explicabo quasi blanditiis modi, quas inventore quia
+          voluptas. Quo, sint!
+        </p>
+      </MotionWrapper>
+      <MotionWrapper>
+        <h2>Testing</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam
+          earum tenetur, corporis fugit nihil suscipit tempora numquam,
+          doloribus natus odio magnam sequi optio. Cum explicabo, architecto
+          tenetur minus doloribus corporis, quas quos dolor perspiciatis animi
+          molestias? Laborum iure enim voluptates molestias, suscipit, id rerum
+          dolore sint saepe incidunt beatae sapiente non iste eos minima cum
+          maiores possimus ipsum cupiditate neque? Eos velit dolore explicabo.
+          Dolorem deserunt architecto excepturi porro voluptates, consequuntur a
+          quisquam nostrum ad consectetur saepe maxime autem at blanditiis
+          dolore reiciendis placeat aperiam dolores maiores dolor eius ea
+          dignissimos! Fugiat eligendi, ex ipsa quaerat adipisci laborum
+          veritatis rerum omnis. Qui, ut possimus, magnam fugit voluptatibus in
+          quod, voluptate reiciendis cum repudiandae excepturi facilis.
+          Temporibus explicabo ut voluptatum vitae nisi modi architecto delectus
+          in. Deserunt, magni! Repellendus distinctio consequuntur recusandae
+          voluptates ut aperiam praesentium qui beatae voluptatibus ipsam sit
+          ducimus doloribus, aut molestiae nemo in pariatur saepe voluptas animi
+          nam non odio? Nesciunt exercitationem minima distinctio autem.
+          Perspiciatis eos commodi debitis nemo recusandae explicabo numquam
+          mollitia quidem ipsam dolorem, consectetur voluptates laboriosam
+          consequuntur, voluptas reiciendis? Quas magnam pariatur illo dicta
+          adipisci expedita praesentium modi. Labore odit enim repudiandae
+          officiis explicabo quasi blanditiis modi, quas inventore quia
+          voluptas. Quo, sint!
+        </p>
+      </MotionWrapper>
+      <MotionWrapper>
+        <h2>Testing</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam
+          earum tenetur, corporis fugit nihil suscipit tempora numquam,
+          doloribus natus odio magnam sequi optio. Cum explicabo, architecto
+          tenetur minus doloribus corporis, quas quos dolor perspiciatis animi
+          molestias? Laborum iure enim voluptates molestias, suscipit, id rerum
+          dolore sint saepe incidunt beatae sapiente non iste eos minima cum
+          maiores possimus ipsum cupiditate neque? Eos velit dolore explicabo.
+          Dolorem deserunt architecto excepturi porro voluptates, consequuntur a
+          quisquam nostrum ad consectetur saepe maxime autem at blanditiis
+          dolore reiciendis placeat aperiam dolores maiores dolor eius ea
+          dignissimos! Fugiat eligendi, ex ipsa quaerat adipisci laborum
+          veritatis rerum omnis. Qui, ut possimus, magnam fugit voluptatibus in
+          quod, voluptate reiciendis cum repudiandae excepturi facilis.
+          Temporibus explicabo ut voluptatum vitae nisi modi architecto delectus
+          in. Deserunt, magni! Repellendus distinctio consequuntur recusandae
+          voluptates ut aperiam praesentium qui beatae voluptatibus ipsam sit
+          ducimus doloribus, aut molestiae nemo in pariatur saepe voluptas animi
+          nam non odio? Nesciunt exercitationem minima distinctio autem.
+          Perspiciatis eos commodi debitis nemo recusandae explicabo numquam
+          mollitia quidem ipsam dolorem, consectetur voluptates laboriosam
+          consequuntur, voluptas reiciendis? Quas magnam pariatur illo dicta
+          adipisci expedita praesentium modi. Labore odit enim repudiandae
+          officiis explicabo quasi blanditiis modi, quas inventore quia
+          voluptas. Quo, sint!
+        </p>
+      </MotionWrapper>
+      <MotionWrapper>
+        <h2>Testing</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam
+          earum tenetur, corporis fugit nihil suscipit tempora numquam,
+          doloribus natus odio magnam sequi optio. Cum explicabo, architecto
+          tenetur minus doloribus corporis, quas quos dolor perspiciatis animi
+          molestias? Laborum iure enim voluptates molestias, suscipit, id rerum
+          dolore sint saepe incidunt beatae sapiente non iste eos minima cum
+          maiores possimus ipsum cupiditate neque? Eos velit dolore explicabo.
+          Dolorem deserunt architecto excepturi porro voluptates, consequuntur a
+          quisquam nostrum ad consectetur saepe maxime autem at blanditiis
+          dolore reiciendis placeat aperiam dolores maiores dolor eius ea
+          dignissimos! Fugiat eligendi, ex ipsa quaerat adipisci laborum
+          veritatis rerum omnis. Qui, ut possimus, magnam fugit voluptatibus in
+          quod, voluptate reiciendis cum repudiandae excepturi facilis.
+          Temporibus explicabo ut voluptatum vitae nisi modi architecto delectus
+          in. Deserunt, magni! Repellendus distinctio consequuntur recusandae
+          voluptates ut aperiam praesentium qui beatae voluptatibus ipsam sit
+          ducimus doloribus, aut molestiae nemo in pariatur saepe voluptas animi
+          nam non odio? Nesciunt exercitationem minima distinctio autem.
+          Perspiciatis eos commodi debitis nemo recusandae explicabo numquam
+          mollitia quidem ipsam dolorem, consectetur voluptates laboriosam
+          consequuntur, voluptas reiciendis? Quas magnam pariatur illo dicta
+          adipisci expedita praesentium modi. Labore odit enim repudiandae
+          officiis explicabo quasi blanditiis modi, quas inventore quia
+          voluptas. Quo, sint!
+        </p>
+      </MotionWrapper>
     </div>
   );
 }

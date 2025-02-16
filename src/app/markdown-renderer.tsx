@@ -36,7 +36,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
     }, 2000); // Reset after 2 seconds
   };
   return (
-    <div className="flex gap-8 mt-4">
+    <div className="flex gap-8">
       {/* {renderToc(tocItems)} */}
       {/* <aside className="xl:w-1/4 hidden xl:block">
         <RenderToc tocItems={tocItems} />

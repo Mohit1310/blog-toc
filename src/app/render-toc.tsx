@@ -90,9 +90,9 @@ const RenderToc = ({ tocItems }: { tocItems: TocItem[] }) => {
   };
 
   return (
-    <nav className="hidden lg:block sticky top-20 max-h-[80vh] overflow-y-auto no-scrollbar px-4 pb-4 border-x border-gray-200">
+    <nav className="hidden lg:block sticky top-8 max-h-[80vh] overflow-y-auto no-scrollbar ps-4 pe-2 pb-4 border-l border-gray-200">
       {/* <h2 className="text-xl font-semibold mb-2">Table of Contents</h2> */}
-      <ul className="space-y-2" ref={tocRef}>
+      <ul className="space-y-1.5" ref={tocRef}>
         {tocItems.map((item) => (
           <motion.li
             key={item.id}
@@ -103,10 +103,8 @@ const RenderToc = ({ tocItems }: { tocItems: TocItem[] }) => {
           >
             <a
               href={`#${item.id}`}
-              className={`block py-1 hover:text-blue-600 transition-colors duration-200 ${
-                activeId === item.id
-                  ? 'text-blue-600 font-semibold'
-                  : 'text-gray-700'
+              className={`block py-1 hover:text-primary transition-colors text-sm duration-200 ${
+                activeId === item.id ? 'text-primary font-semibold' : ''
               }`}
               onClick={(e) => handleClick(e, item.id)}
             >

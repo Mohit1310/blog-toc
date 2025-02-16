@@ -7,6 +7,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
+import { motion } from 'motion/react';
 
 const SocialShare = ({ url, title }: { url: string; title: string }) => {
   const shareText = encodeURIComponent(title);
@@ -41,7 +42,7 @@ const SocialShare = ({ url, title }: { url: string; title: string }) => {
   };
 
   return (
-    <div className="flex items-center space-x-4 mt-4">
+    <motion.div className="flex items-center gap-4 flex-col">
       {socialLinks.map((item) => (
         <TooltipProvider key={item.name}>
           <Tooltip>
@@ -55,7 +56,7 @@ const SocialShare = ({ url, title }: { url: string; title: string }) => {
                 {item.icon}
               </a>
             </TooltipTrigger>
-            <TooltipContent>
+            <TooltipContent side="right">
               <span>Share on {item.name}</span>
             </TooltipContent>
           </Tooltip>
@@ -71,12 +72,12 @@ const SocialShare = ({ url, title }: { url: string; title: string }) => {
               <Link className="w-6 h-6 text-primary" />
             </button>
           </TooltipTrigger>
-          <TooltipContent>
+          <TooltipContent side="right">
             <span>{copied === url ? 'Copied!' : 'Copy Link'}</span>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
-    </div>
+    </motion.div>
   );
 };
 
